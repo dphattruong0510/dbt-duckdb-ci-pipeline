@@ -5,7 +5,7 @@ WITH job_postings AS (
 
 SELECT
   DATE_TRUNC('month', search_date) AS month,
-  search_term,
+  search_term AS role,
   COUNT(*) AS postings
 FROM job_postings
 GROUP BY
@@ -13,4 +13,4 @@ GROUP BY
    search_term
 ORDER BY 
   month, 
-  search_term
+  role
