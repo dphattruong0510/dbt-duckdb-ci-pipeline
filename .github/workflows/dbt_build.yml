@@ -1,7 +1,7 @@
 name: dbt build & publish
 on:
   push: 
-    branches: [master]
+    branches: [main]
   schedule:
     - cron: '17 6 * * 1'
   workflow_dispatch:  # Manual Run Button
@@ -9,7 +9,7 @@ permissions:
   contents: write  # Allow workflow update the release
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@5
